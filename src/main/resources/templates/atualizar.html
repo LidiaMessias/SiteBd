@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteração</title>
+</head>
+<body>
+    <h1>Sistema de Cadastro</h1>
+    
+    <form th:action="@{'/atualizar/' + ${id}}" method="post" th:object="${cliente}">
+        Nome: <input type="text" th:field="*{nome}"><br>
+        CPF: <input type="text" th:field="*{cpf}"><br>
+        <input type="submit" value="Atualizar" name="atualizar">
+    </form>
+
+    <a th:href="@{/}">Voltar para Index</a>
+    
+</body>
+</html>
